@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "E-commerce Schema",
+  "description": "E-commerce Orders",
+  "type": "object",
+  "properties": {
+    "Order": {
+      "description": "Order information",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "orderId": { "description": "Order ID", "type": "string" },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sku": {
+                  "description": "Product SKU in order",
+                  "type": "string"
+                },
+                "quantity": {
+                  "description": "Quantity of product in order",
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "orderDate": {
+            "description": "When order was placed",
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdatedDate": {
+            "description": "When order was last updated",
+            "type": "string",
+            "format": "date-time"
+          },
+          "total": {
+            "description": "Total cost of the order",
+            "type": "number"
+          },
+          "receiptUrl": {
+            "description": "Url for the order receipt",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
